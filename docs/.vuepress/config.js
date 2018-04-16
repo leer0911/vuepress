@@ -1,13 +1,11 @@
 const base = process.env.GH ? '/vuepress/' : '/'
 
 module.exports = {
-  title: 'VuePress',
-  description: 'Vue-powered Static Site Generator',
+  title: 'jsPractice',
+  description: 'javascript practice',
   dest: 'vuepress',
   base,
-  head: [
-    ['link', { rel: 'icon', href: `/logo.png` }]
-  ],
+  head: [['link', { rel: 'icon', href: `/logo.png` }]],
   serviceWorker: true,
   themeConfig: {
     repo: 'vuejs/vuepress',
@@ -15,8 +13,12 @@ module.exports = {
     docsDir: 'docs',
     nav: [
       {
+        text: 'Array',
+        link: '/array/'
+      },
+      {
         text: 'Guide',
-        link: '/guide/',
+        link: '/guide/'
       },
       {
         text: 'Config Reference',
@@ -42,6 +44,13 @@ module.exports = {
             'custom-themes',
             'deploy'
           ]
+        }
+      ],
+      '/array/': [
+        {
+          title: 'array',
+          collapsable: false,
+          children: ['', 'aaaaa', '3']
         }
       ]
     }

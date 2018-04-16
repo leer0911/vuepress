@@ -1,7 +1,7 @@
 <template>
   <p>
     <slot v-if="show"></slot>
-    <button @click="showAnswer">显示答案</button>
+    <button @click="showAnswer">{{!show?'显示':'隐藏'}}答案</button>
   </p>
 </template>
 
@@ -9,13 +9,12 @@
 export default {
   data() {
     return {
-      show: false,
-      msg: 'Hello this is <demo-1>'
+      show: false
     };
   },
   methods: {
     showAnswer() {
-      this.show = true;
+      this.show = !this.show;
     }
   }
 };
