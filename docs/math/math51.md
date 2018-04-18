@@ -1,0 +1,63 @@
+# Subtract two complex numbers
+
+Write a JavaScript program to subtract two complex numbers.  
+A complex number is a number that can be expressed in the form a + bi, where a and b are real numbers and i is the imaginary unit, that satisfies the equation i2 = −1. In this expression, a is the real part and b is the imaginary part of the complex number.
+
+```
+Sample Solution:-
+```
+
+**HTML Code:**
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript function to subtract two complex numbers</title>
+</head>
+<body>
+
+</body>
+</html>
+
+```
+
+**JavaScript Code:**
+
+```js
+function Complex(real, imaginary) {
+  this.real = 0;
+  this.imaginary = 0;
+  this.real = (typeof real === 'undefined') ? this.real : parseFloat(real);
+  this.imaginary = (typeof imaginary === 'undefined') ? this.imaginary : parseFloat(imaginary);
+}
+Complex.transform = function(num) {
+  var complex;
+  complex = (num instanceof Complex) ? num : complex;
+  complex = (typeof num === 'number') ? new Complex(num, 0) : num;
+  return complex;
+};
+function display_complex(re, im) {
+  if(im === '0') return '' + re;
+  if(re === 0) return '' + im + 'i';
+  if(im < 0) return '' + re + im + 'i';
+  return '' + re + '+' + im + 'i';
+}
+function complex_num_subtract(first, second) {
+  var num1, num2;
+  num1 = Complex.transform(first);
+  num2 = Complex.transform(second);
+  var real = num1.real - num2.real;
+  var imaginary = num1.imaginary - num2.imaginary;
+  return display_complex(real, imaginary);   
+}
+ var a = new Complex(2, -7);
+ var b = new Complex(4,  3);
+console.log(complex_num_subtract(a,b));
+
+```
+
+**Live Demo:**
+
+<section class="expand-codepen"><p data-height="380" data-theme-id="0" data-slug-hash="jGLepN" data-default-tab="js,result" data-user="w3resource" data-embed-version="2" data-pen-title="JavaScript - common-editor-exercises" data-editable="true" class="codepen">See the Pen by w3resource () on .</p><codepen></codepen></section>

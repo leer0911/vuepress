@@ -13,7 +13,9 @@
     "lint": "eslint bin lib test",
     "prepublishOnly":
       "conventional-changelog -p angular -r 2 -i CHANGELOG.md -s",
-    "p": "node ./puppeteer/pro.js"
+    "p": "node ./tools/pro.js",
+    "r": "node ./tools/re.js",
+    "file": "node ./tools/file.js"
   },
   "repository": {
     "type": "git",
