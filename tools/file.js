@@ -1,5 +1,5 @@
 const fs = require('fs')
-const basePath = './docs/algorithm/'
+const basePath = './docs/jsbit/js/'
 
 fs.readdir(basePath, function (err, files) {
   if (err) {
@@ -10,11 +10,9 @@ fs.readdir(basePath, function (err, files) {
       if (err) {
         return console.error(err)
       }
-      const mData = data.replace(
-        /# JavaScript Searching and Sorting Algorithm: /gi,
-        '# '
-      )
-      fs.writeFile(`${basePath}${file}`, mData)
+      const mData =
+        `# ${file.replace('.js', '')}\n\n` + '```js\n' + data + '\n```'
+      fs.writeFile(`./docs/jsbit/${file.replace('.js', '.md')}`, mData)
       console.log('修改成功!')
     })
   })
