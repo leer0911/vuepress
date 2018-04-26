@@ -1,47 +1,33 @@
-<p align="center">
-  <a href="https://vuepress.vuejs.org/" target="_blank">
-    <img width="280" src="https://github.com/vuejs/vuepress/blob/master/docs/.vuepress/public/hero.png" alt="logo">
-  </a>
-</p>
+# 总结
 
-# VuePress
+* Write a JavaScript function to check whether an 'input' is an array or not.
 
-> Minimalistic docs generator with Vue component based layout system
-
-https://vuepress.vuejs.org/
-
-## Features
-
-- [Built-in markdown extensions](https://vuepress.vuejs.org/guide/markdown.html) optimized for technical documentation
-- [Ability to leverage Vue inside markdown files](https://vuepress.vuejs.org/guide/using-vue.html)
-- [Vue-powered custom theme system](https://vuepress.vuejs.org/guide/custom-themes.html)
-- Service Worker Integration
-- Google Analytics Integration
-- A default theme with:
-  - Responsive layout
-  - Optional Homepage
-  - Automatic basic typeahead search
-  - Customizable navbar and sidebar
-  - Auto-generated GitHub link and page edit links
-
-## Todo Features
-
-VuePress is still a work in progress. There are a few things that it currently does not support but are planned:
-
-- Dropdown Items in Navbar
-- Multi-Language Support
-- Algolia DocSearch Integration
-- Blogging support
-
-Contributions are welcome!
-
-## Development
-
-``` bash
-yarn
-yarn dev # serves VuePress' own docs with itself
+```js
+toString.call(input) === '[object Array]';
 ```
 
-## License
+* Write a JavaScript function to clone an array.
 
-MIT
+```js
+arr.slice(0);
+```
+
+* Write a JavaScript function to get the first element of an array. Passing a parameter 'n' will return the first 'n' elements of the array.
+
+```js
+if (n === null) {
+  return arr[0];
+} else {
+  arr.slice(0, n);
+}
+```
+
+* Write a JavaScript function to get the last element of an array. Passing a parameter 'n' will return the last 'n' elements of the array.
+
+```js
+if (n === null) {
+  return arr[0];
+} else {
+  arr.slice(0, n);
+}
+```

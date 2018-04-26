@@ -1,11 +1,14 @@
 const fs = require('fs')
 const base = process.env.GH ? '/vuepress/' : '/'
 const basePath = './docs/'
-const arrGenerate = (num, label) => {
-  const arr = []
-  for (let index = 2; index <= num; index++) {
-    arr.push(`${label}${index}`)
-  }
+const arrGenerate = files => {
+  const arr = ['']
+  files.forEach(function (file) {
+    const fileName = file.replace('.md', '')
+    if (fileName !== 'README') {
+      arr.push(fileName)
+    }
+  })
   return arr
 }
 
@@ -34,7 +37,7 @@ fs.readdir(basePath, function (err, files) {
         {
           title: file,
           collapsable: false,
-          children: arrGenerate(files.length, file)
+          children: arrGenerate(files)
         }
       ]
     })
@@ -42,7 +45,7 @@ fs.readdir(basePath, function (err, files) {
 })
 
 module.exports = {
-  title: 'FE',
+  title: '📚 FECODING',
   description: 'FrontEnd Exercise Collection By VuePress',
   dest: 'vuepress',
   base,
